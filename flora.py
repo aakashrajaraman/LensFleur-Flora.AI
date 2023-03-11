@@ -55,7 +55,7 @@ model = load_model("LensFleur-Flora.AI\model_finetuned.h5")
 @app.route('/', methods = ['GET'])
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
-    msg = ''
+    msg = 'Log in to continue'
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
         username = request.form['username']
         password = request.form['password']
@@ -81,6 +81,8 @@ def register():
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form :
         username = request.form['username']
         password = request.form['password']
+        name = request.form['name']
+        aadhaar = request.form['aadhaar']
         email = request.form['email']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM accounts WHERE username = % s', (username, ))
@@ -94,7 +96,7 @@ def register():
         elif not username or not password or not email:
             msg = 'Please fill out the form !'
         else:
-            cursor.execute('INSERT INTO accounts VALUES (% s, % s, % s)', (username, password, email,  ))
+            cursor.execute('INSERT INTO accounts VALUES (% s, % s, % s, %s, %s)', (username, password, email, name, aadhaar, ))
             mysql.connection.commit()
             msg = 'You have successfully registered !'
     elif request.method == 'POST':
