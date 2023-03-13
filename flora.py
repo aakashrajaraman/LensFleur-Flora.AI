@@ -48,9 +48,6 @@ classes=['Apple scab', 'Apple Black rot', 'Cedar apple rust',
 
 
 model = load_model("LensFleur-Flora.AI\model_finetuned.h5")
-#LensFleur-Flora.AI\model_finetuned.h5
-
-
 
 @app.route('/', methods = ['GET'])
 @app.route('/login', methods = ['GET', 'POST'])
@@ -84,6 +81,7 @@ def register():
         name = request.form['name']
         aadhaar = request.form['aadhaar']
         email = request.form['email']
+        city = request.form['city_state']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM accounts WHERE username = % s', (username, ))
         account = cursor.fetchone()
@@ -96,7 +94,7 @@ def register():
         elif not username or not password or not email:
             msg = 'Please fill out the form !'
         else:
-            cursor.execute('INSERT INTO accounts VALUES (% s, % s, % s, %s, %s)', (username, password, email, name, aadhaar, ))
+            cursor.execute('INSERT INTO accounts VALUES (% s, % s, % s, %s, %s, %s)', (username, password, email, name, aadhaar,city, ))
             mysql.connection.commit()
             msg = 'You have successfully registered !'
     elif request.method == 'POST':
