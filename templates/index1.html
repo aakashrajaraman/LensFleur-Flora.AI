@@ -23,6 +23,7 @@
 }
 .image-container1{
     margin-left: 0px;
+    
 }
 
 body.hide-scroll::-webkit-scrollbar {
@@ -63,36 +64,32 @@ p {
     letter-spacing: 1.5px;
     font-size: 18px;
 }
-.navigation-bar{
-    margin-left: 100px;
-    padding: 20 px;
-    font-weight: bold;
-}
+
 /*End Global*/
 
 /*Start Mutual*/
-p, .a-CTA, input, header .navigation-bar a, .copyright li, .contact .form form label, .contact .form form button {
+p, .a-CTA, input, .copyright li, .contact .form form label, .contact .form form button {
     font-family: Cabin, sans-serif;
 }
-.fa-asterisk, .a-CTA, h2, header .navigation-bar a:hover, header nav.active .navigation-bar a:hover, footer .social-media .links a:hover, .copyright .info li a, .copyright .CTA li a:hover {
+.fa-asterisk, .a-CTA, h2, footer .social-media .links a:hover, .copyright .info li a, .copyright .CTA li a:hover {
     color: #a96700;
 }
-header nav .navigation-bar .underline, header .text .button button:hover, .contact .form form button:hover, .contact .text i:hover {
+ header .text .button button:hover, .contact .form form button:hover, .contact .text i:hover {
     background-color: #a96700;
 }
-header .navigation-bar ul li, header .text, .about-us .text, .reservation .text, .menu .box-model, .menu .text, .fixed-image .text, footer, .copyright, .contact .text i {
+header .text, .about-us .text, .reservation .text, .menu .box-model, .menu .text, .fixed-image .text, footer, .copyright, .contact .text i {
     text-align: center;
 }
-header nav, header .navigation-bar ul, .about-us, .reservation, .about-us .image-container, .reservation .image-container, .menu, .menu .menu-image-container, footer .contact-container, .copyright ul, .contact {
+.about-us, .reservation, .about-us .image-container, .reservation .image-container, .menu, .menu .menu-image-container, footer .contact-container, .copyright ul, .contact {
     display: flex;
 }
-header nav .toggle, header nav .toggle span, header .navigation-bar, header .navigation-bar ul, .menu .box-model .close, footer .social-media .links a, .copyright .CTA li a {
+ .menu .box-model .close, footer .social-media .links a, .copyright .CTA li a {
     transition: .3s;
 }
-header, header nav .toggle span, header .navigation-bar a, header .text, header .text .arrow .left, header .text .arrow .right, .recipes, .menu .box-image-container, .fixed-image .text, .copyright, .copyright .arrow-up {
+header,  header .text, header .text .arrow .left, header .text .arrow .right, .recipes, .menu .box-image-container, .fixed-image .text, .copyright, .copyright .arrow-up {
     position: relative;
 }
-header nav .toggle, header .navigation-bar .underline, header .text .arrow .left:after, header .text .arrow .right:after, header .svg-down, header .arrow-down, .recipes .text, .menu .box-model .close, .menu .box-model .arrow .arrow-right,.menu .box-model .arrow .arrow-left, .menu .box-image-container .box-image, .copyright .svg-up {
+header .text .arrow .right:after, header .svg-down, header .arrow-down, .recipes .text, .menu .box-model .close, .menu .box-model .arrow .arrow-right,.menu .box-model .arrow .arrow-left, .menu .box-image-container .box-image, .copyright .svg-up {
     position: absolute;
 }
 .recipes .text, .fixed-image .text, .menu .box-image-container, .menu .box-image-container .box-image {
@@ -100,19 +97,19 @@ header nav .toggle, header .navigation-bar .underline, header .text .arrow .left
     left: 50%;
     transform: translate(-50%,-50%);
 }
-header nav, header .navigation-bar a:hover .underline, header .navigation-bar li.active .underline, .menu .box-model, .menu .box-image-container, .menu .box-image-container .box-image {
+ .menu .box-model, .menu .box-image-container, .menu .box-image-container .box-image {
     width: 100%;
 }
-button, .dots > div, header nav .toggle, header .arrow-down, .menu .box-model .close, .menu .box-model .arrow .arrow-right,.menu .box-model .arrow .arrow-left, .menu .menu-image-container .image img, footer .newsletter i, .copyright .arrow-up {
+button, header .arrow-down, .menu .box-model .close, .menu .box-model .arrow .arrow-right,.menu .box-model .arrow .arrow-left, .menu .menu-image-container .image img, footer .newsletter i, .copyright .arrow-up {
     cursor: pointer;
 }
-.dots .active, header nav.active, header nav.active .toggle.active span, header nav .toggle span, header .navigation-bar .underline, header .text .arrow .left, header .text .arrow .right, header .text .button button, .contact form button {
+header .text .arrow .left, header .text .arrow .right, header .text .button button, .contact form button {
     background-color: #fff;
 }
-h1, h3, header .navigation-bar a, header .text span, .menu .box-model .close:hover, footer .text h2, footer .text p, footer .social-media .links a, .contact .text i, .contact .form form button {
+h1, h3, header .text span, .menu .box-model .close:hover, footer .text h2, footer .text p, footer .social-media .links a, .contact .text i, .contact .form form button {
     color: #fff;
 }
-header nav, header .navigation-bar.show, header .navigation-bar a:hover .underline, header .navigation-bar li.active .underline, header .text .arrow .left:after, .menu .box-model, .copyright .arrow-up {
+header .text .arrow .left:after, .menu .box-model, .copyright .arrow-up {
     left: 0;
 }
 header .text .arrow .left:after, header .text .arrow .right:after, header .text span, footer .social-media .links a, footer .newsletter i, .copyright .arrow-up, .contact .text i, .contact .form form label {
@@ -120,28 +117,8 @@ header .text .arrow .left:after, header .text .arrow .right:after, header .text 
 }
 /*End Mutual*/
 
-/*Start Dots*/
-.dots {
-    position: fixed;
-    top: 50%;
-    right: 30px;
-    transform: translate(0,-50%);
-    z-index: 5;
-}
-.dots > div  {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    z-index: 20;
-    margin-bottom: 10px;
-    border: 2px solid #fff;
-}
-.dots .black {
-    border-color: #000;
-}
-.dots .active.black {
-    background-color: #000;
-}
+
+
 /*End Dots*/
 
 /*Start Loader*/
@@ -595,86 +572,10 @@ header {
     height: calc(100vh - 22px);
     background-size: cover;
     padding: 20px 70px;
-    background-image: url({{url_for('static',filename='mainpic.jpeg')}});
+    background-image: url("{{url_for('static',filename='greenblur.jpg')}}");
 }
-header nav {
-    position: fixed;
-    top: 0;
-    padding: 36px 36px 20px;
-    z-index: 20;
-}
-header nav .toggle {
-    display: none;
-    top: 26px;
-    left: 20px;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    z-index: 21;
-}
-header nav .toggle:focus {
-    outline: none;
-}
-header nav.active .toggle span {
-    background-color: #000;
-}
-header nav .toggle.active {
-    left: 32%;
-}
-header nav .toggle.active .first {
-    top: 16px;
-    transform: rotate(-45deg);
-}
-header nav .toggle.active .last {
-    top: 0;
-    transform: rotate(45deg);
-}
-header nav .toggle .hide {
-    transition: 0s;
-    visibility: hidden;
-}
-header nav .toggle span {
-    display: block;
-    width: 30px;
-    height: 2px;
-    border-radius: 40px;
-}
-header nav .toggle span:not(:last-of-type) {
-    margin-bottom: 6px;
-}
-header nav .logo {
-    flex-basis: 56%;
-    padding-left: 50px;
-}
-header .navigation-bar.show {
-    width: 40%;
-}
-header .navigation-bar.show a {
-    color: #ccc !important;
-}
-header .navigation-bar.show a:hover {
-    color: #fff !important;
-}
-header .navigation-bar ul li {
-    flex: 1;
-    padding: 0 10px;
-}
-header .navigation-bar a {
-    text-decoration: none;
-    transition: all .5s;
-    font-size: 16px;
-}
-header nav.active .navigation-bar a {
-    color: #000;
-}
-header .navigation-bar .underline {
-    height: 2px;
-    width: 0;
-    left: 50%;
-    bottom: -4px;
-    transition: all .3s;
-    display: block;
-}
+
+
 header .text {
     top: 24%;
 }
@@ -744,8 +645,8 @@ header .arrow-down {
     margin-right: 0px;
 }
 .dos{
-    width: 300px;
-    height: 611px;
+    width: 500px;
+    height: 300px;
     margin-right: 0px;
 }
 
@@ -753,8 +654,18 @@ header .arrow-down {
 /*End Header*/
 
 /*Start About-Us*/
-.about-us, .reservation {
+.about-us{
     padding: 60px;
+
+}
+.reservation {
+    background-color: #ffffff;
+    border-color: #032406;
+    border: dashed 5px;
+    border-radius: 30px;
+    padding: 30px;
+    margin: 20px;
+
 }
 .about-us .text, .reservation .text {
     flex: 50%;
@@ -777,7 +688,7 @@ header .arrow-down {
 /*Start Recipes*/
 .recipes .image {
     height: 350px;
-    background: url({{url_for('static',filename='s1.jpg')}}) fixed center;
+    background: url("{{url_for('static',filename='s1.jpg')}}") fixed center;
     
     background-size: cover;
 }
@@ -795,12 +706,7 @@ header .arrow-down {
     z-index: 20;
     background-color: rgba(0,0,0,.7);
 }
-.menu .box-model.active {
-    display: block;
-}
-.menu .box-model.active body {
-    overflow: hidden;
-}
+
 .menu .box-model .close {
     color: #ccc;
     right: 25px;
@@ -824,9 +730,7 @@ header .arrow-down {
 .menu .box-image-container {
     height: 100%;
 }
-.menu .box-image-container .box-image img.active {
-    animation: scale .5s;
-}
+
 @keyframes scale {
     from {transform: scale(0,0)}
     to {transform: scale(1,1)}
@@ -853,7 +757,7 @@ header .arrow-down {
 
 /*Start fixed-image*/
 .fixed-image {
-    background: url({{url_for('static',filename='m1.jpg')}});
+    background: url("{{url_for('static',filename='m1.jpg')}}");
     background-size: cover;
     height: 400px;
 }
@@ -987,7 +891,7 @@ input[type="file"]::file-selector-button:hover {
 
 /*Start Contact Page*/
 .contact-header {
-    background-image: url({{url_for('static',filename='contact-food.jpg')}});
+    background-image: url("{{url_for('static',filename='contact-food.jpg')}}");
     height: 40vh;
 }
 .contact {
@@ -1066,15 +970,8 @@ input[type="file"]::file-selector-button:hover {
     body {
         padding: 0;
     }
-    .dots {
-        display: none;
-    }
-    header {
-        height: calc(100vh - 10px);
-    }
-    header nav .logo {
-        padding-left: 0;
-    }
+    
+  
     .about-us {
         display: block;
         padding-top: 50px;
@@ -1107,34 +1004,9 @@ input[type="file"]::file-selector-button:hover {
 }
 
 @media (max-width: 768px) {
-    header nav {
-        display: block;
-        text-align: center;
-        left: 0;
-        top: 0;
-        width: 100%;
-        padding-top: 25px;
-    }
-    header nav .toggle {
-        display: block;
-    }
-    header .navigation-bar {
-        position: fixed;
-        top: 0;
-        left: -174px;
-        height: 100%;
-        background-color: #262526;
-        overflow: hidden;
-        z-index: 20;
-        padding: 40px;
-    }
-    header .navigation-bar ul {
-        display: block;
-        padding-top: 40px;
-    }
-    header .navigation-bar ul li {
-        text-align: left;
-    }
+    
+    
+   
     footer .contact-container {
         display: block;
     }
@@ -1164,16 +1036,8 @@ input[type="file"]::file-selector-button:hover {
     header {
         padding: 0;
     }
-    header nav .logo {
-        padding-left: 0;
-    }
-    header nav .toggle.active {
-        left: 36%;
-    }
-    header .navigation-bar.show {
-        padding: 20px;
-        width: 48%;
-    }
+   
+   
     .about-us, .reservation {
         padding: 60px 20px;
     }
@@ -1191,31 +1055,154 @@ body
     .goog-te-banner-frame{
         display:none !important
     }
+
+   /*new menu style-buck*/
+   @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+*{
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper{
+  margin: 0px;
+}
+
+.wrapper .navbar{
+  width: 100%;
+  opacity: 0.9;
+  background: #000000;
+  margin: 0 auto;
+  height: 65px;
+  border-radius: 5px;
+}
+
+.wrapper .navbar .main_ul{
+  display: flex;
+  height: 100%;
+  width: 80%;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.wrapper .navbar .main_ul > li{
+  position: relative;
+}
+
+.wrapper .navbar .main_ul > li > a{
+   color: #748ea2;
+   display: block;
+   width: 175px;
+   text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  margin-right: 1px;
+  padding: 21px 0;
+  position: relative;
+  transition: all 0.3s linear;
+}
+
+.wrapper .navbar .main_ul li:hover  a{
+  background: #000000;
+  color: #fff;
+  transition: all 0.3s linear;
+}
+
+.wrapper .navbar .main_ul  li:hover a .arrow{
+  top: 29px;
+  transform: rotate(135deg);
+  border-color: transparent transparent #fff #fff;
+   transition: all 0.3s linear;
+}
+
+.wrapper .navbar .main_ul li a .arrow{
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border: 2px solid;
+  border-color: transparent transparent #ffffff #ffffff;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 23px;
+  right: 13px;
+   transition: all 0.3s linear;
+}
+
+.wrapper .navbar .main_ul  > li .dropdown{
+  background: #154f7d;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 175px;
+  display: none;
+}
+
+.wrapper .navbar .main_ul  > li .dropdown a{
+  display: block;
+  padding: 20px;
+  text-align: center;
+  color: #748ea2;
+}
+
+.wrapper .navbar .main_ul  > li .dropdown a:hover{
+  color: #fff;
+}
+
+.wrapper .navbar .main_ul  > li:hover .dropdown{
+  display: block;
+}
+
+
     </style>
-
-
-
 
 </head>
 
-
-
-
 <body class="stop-scroll" id ="google_element">
 
-  <!--Start Dots-->
-  <div class="dots">
-      <div class="active one" data-x="header"></div>
-      <div class="two" data-x=".recipes"></div>
-      <div class="three" data-x=".fixed-image"></div>
-  </div>
-  <!--End Dots-->
 
  <!--Start Header-->
+ 
   <header>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Squada One">
-      <nav>
+
+    <div class="wrapper">
+        <div class="navbar">
+            <ul class="main_ul">
+                <li><a href="{{url_for('home')}}">HOME</a></li>
+                <li><a href="{{url_for('product')}}">PRODUCTS     
+                  <span class="arrow"></span>
+                  </a>
+                    <ul class="dropdown">
+                        <li><a href="#">Dropdown1</a></li>
+                        <li><a href="#">Dropdown2</a></li>
+                        <li><a href="#">Dropdown3</a></li>
+                         
+                    </ul>
+                </li>
+                <li><a href="{{url_for('profile')}}">EXPERTS CHAT</a></li>
+                <li><a href="#">LOGIN
+                  <span class="arrow"></span>
+                  </a>
+                  <ul class="dropdown">
+                        <li><a href="#">Dropdown1</a></li>
+                        <li><a href="#">Dropdown2</a></li>
+                        <li><a href="#">Dropdown3</a></li>
+                        
+                  </ul>  
+                </li>
+                <li><a href="#">PROFILE</a></li>  
+            </ul>  
+        </div>
+    </div>  
+    
+    
+    <!--
+    <nav>
           <div class="logo">
               
           </div>
@@ -1226,88 +1213,82 @@ body
                   <li><a href="{{url_for('product')}}">Products<span class="underline"></span></a></li>
                   <li><a href="{{url_for('profile')}}">Expert Chat<span class="underline"></span></a></li>
                   <li><a href="#">Login/Registration<span class="underline"></span></a></li>
-                  
+                
               </ul>
           </div>
+        
       </nav>
+         --> 
       <div class="text">
-          <h2 style = "color: #61f300">LensFleur</h2>
+          <h2 style = "color: #000000; font-size: 200px;margin-top: -1%;">LensFleur</h2>
           <br>
           <br>
           <br>
-          <h1>By Flora.AI</h1>
-          <div class="arrow">
-              <span class="left"></span>
-              <i class="fas fa-asterisk"></i>
-              <span class="right"></span>
-          </div>
+          <h1 style = "color: #000000; font-family:'Bebas Neue';">By Flora.AI</h1>
+
       </div>
       
-      <div class="arrow-down">
+
       </div>
   </header>
   <!--End Header-->
   <div class="reservation">
         <div class="image-container1">
         <div class="image image1">
-            <img src="{{url_for('static',filename='/l1.jpg')}}" alt="Food Photo" class = "tres">
+            <img src="{{url_for('static',filename='/l1.jpg')}}" alt="Food Photo">
         </div>
         
     </div>
+
     <div class="text" style = "padding-left: 200px;">
-        <h2 style = "color:#54b711; font-size: 100px;">Diagnose Now</h2>
+        <h2 style = "color:#54b711; font-size: 550%;">Diagnose Now</h2></br>
         <br>
         <br>
         <br>
-        <p style="font-family: Staatliches; font-size: 25px;">Upload an image, or take one through your webcam. Then, right click, save, and upload the image.</p>
-        <div><i class="fas fa-asterisk"></i></div>
+        <p style="font-family: Staatliches; font-size: 25px;">Upload an image, or take one through your webcam. Then, right click, save, and upload the image.</p></br>
         <form class="one" action="/" method="post" enctype="multipart/form-data" style="margin-bottom: 30px;">
             <input type="file" name="image" style="font-family: Play; padding-right: 60px;" />
             <button type="submit" class="button2" style="margin-left: 0px;">Upload</button>
         </form>
     </div>
 </div>
+
+  <!--power of knowledge-->
+  <div class="recipes">
+    <div class="image"></div>
+    <div class="text">
+        <h2 style = "font-size: 80px;color:#54b711">Power Of Knowledge</h2>
+        <br>
+        <br>
+        <br>
+        <h3>At Your Fingertips</h3>
+    </div>
+</div>
+<!--power of knowledge -->
   <!--start About Us-->
   <div class="about-us">
       <div class="text">
-          <h2 style = "color: #54b711">Discover</h2>
+          <h2 style = "color: #54b711; font-size: 110px;">OUR MOTIVATION</h2></br>
           <br>
-          <h3 style = "color: #1d1d1d">Our Story</h3>
-          <div><i class="fas fa-asterisk"></i></div>
-          <p> Farmers and Horticulturalists are the backbone of the global supply chain. Without a stable and succesful agricultural driving force in every
-            nation, the lives of everyone will be upended. And that is not a hypothetical. Due to climate change, disease and other microbiological factors, 
-            and many socio-economic factors, farming communities have been ravaged. Crop yields have been unpredictable, and the rates of preventable diseases
-            have been on the rise. This is where LensFleur comes in.
+          <!--<h3 style = "color: #003a0c">OUR STORY</h3>-->
+          <p> LensFleur is a solution for farmers and horticulturists to ensure agricultural sustainability. The platform provides health diagnosis services
+             to detect diseases and pests affecting plants, along with pricing options for fertilizers, both organic and chemical. The service also includes
+              chat support with agricultural experts. The platform can be accessed in various languages for increased accessibility. The aim is to support
+               farming communities and ensure stable agricultural production in the face of challenges such as climate change and socio-economic factors.
           </p>
-          <p>Lensfleur is your one stop destination for Horticulture and Agricultural safety. Use our product to run a health diagnosis on your Flora
-            and our service will detect any diseases or pests that may be affecting your plants. We also provide a chat service with our experts along with
-            pricing options in  ranges of fertilizers in organic and chemical options. You can view this page in a language of your choosing for your accessibility.
-          </p>
-          <div><a class="a-CTA" href="#">About Us</a></div>
       </div>
       <div class="image-container">
           <div class="image image1">
-              <img src="{{url_for('static',filename='v1.jpg')}}"alt="Food Photo" class = "dos">
+              <img src="{{url_for('static',filename='plight.jpeg')}}"alt="Food Photo" class = "dos">
           </div>
-          <div class="image image2" class = "dos">
+          <!--<div class="image image2" class = "dos">
               <img src="{{url_for('static',filename='/v2.jpg')}}" >
-          </div>
+          </div> -->
       </div>
   </div>
   <!--End About Us-->
 
-  <!--start Recipes-->
-  <div class="recipes">
-      <div class="image"></div>
-      <div class="text">
-          <h2 style = "font-size: 80px;color:#54b711">Power Of Knowledge</h2>
-          <br>
-          <br>
-          <br>
-          <h3>At Your Fingertips</h3>
-      </div>
-  </div>
-  <!--End Recipes-->
+
 
   <!--start Menu-->
   <div class="menu">
@@ -1323,6 +1304,7 @@ body
               </div>
           </div>
       </div>
+      
       <div class="menu-image-container">
           <div class="image active">
               <img src="{{url_for('static',filename='/x1.jpg')}}" alt="Food Photo" class="uno">
@@ -1337,17 +1319,19 @@ body
               <img src= "{{url_for('static', filename='x4.jpg')}}" alt="Food Photo" class="uno">
           </div>
       </div>
+
       <div class="text">
           <h2 style = "color:#54b711">Grow</h2>
           <br>
           <h3>Confidently</h3>
-          <div><i class="fas fa-asterisk"></i></div>
+       
           <p>With our expert-backed insight and rigourous testing, our model is trained to detect what's ailing your plants, and get you the right course of
             action as soon as possible.
           </p>
-          <div><a class="a-CTA" href="#">View Our Model Architecture</a></div>
+          
       </div>
   </div>
+</div>
   <!--End Menu-->
 
   <!--Start fixed-image-->
