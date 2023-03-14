@@ -26,7 +26,7 @@ mysql = MySQL(app)
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'Aakash5122!'
-app.config['MYSQL_DB'] = 'login'
+app.config['MYSQL_DB'] = 'lensfleur'
 app.config['SECRET_KEY'] = 'lensfleur'
 
 classes=['Apple scab', 'Apple Black rot', 'Cedar apple rust', 
@@ -153,7 +153,6 @@ def predict():
     else:
         geolocation = "No GPS Data"
     file = open("LensFleur-Flora.AI/static/" + prediction.title() + ".txt", "r") 
-    print(prediction)
     if "Healthy" in prediction or "healthy" in prediction:
         basic = file.read()
         return render_template('Result.html', prediction=prediction, geolocation=geolocation, basic=basic)
@@ -167,7 +166,6 @@ def predict():
         cycle = "Cycle and Lethality: "+cyc[0]
         organic = cyc[1].split("Inorganic Solutions:")
         organics = "Organic Solutions: "+ organic[0]
-        print(organic)
         inorganic = organic[1].split("Src:")
         inorganics = "Inorganic Solutions: "+inorganic[0]
         src = "Find out more at: "+inorganic[1]
