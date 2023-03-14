@@ -50,6 +50,8 @@ classes=['Apple scab', 'Apple Black rot', 'Cedar apple rust',
 model = load_model("LensFleur-Flora.AI\model_finetuned.h5")
 
 @app.route('/', methods = ['GET'])
+def index():
+    return render_template('index1.html')
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     msg = 'Log In To Continue'
@@ -87,12 +89,14 @@ def register():
         account = cursor.fetchone()
         if account:
             msg = 'Account already exists !'
-        elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
+        elif not re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', email):
             msg = 'Invalid email address !'
-        elif not re.match(r'[A-Za-z0-9]+', username):
+        elif not re.match(r'^[a-zA-Z0-9]+$', username):
             msg = 'Username must contain only characters and numbers !'
-        elif not username or not password or not email:
-            msg = 'Please fill out the form !'
+        elif not re.match(r'^(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$', password):#for length of password
+            msg = 'Password must contain atleast 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special character!'
+        elif not username or not password or not email or not name or not aadhaar or not city:
+            msg = 'Please fill out the form fully!'
         else:
             cursor.execute('INSERT INTO accounts VALUES (% s, % s, % s, %s, %s, %s)', (username, password, email, name, aadhaar,city, ))
             mysql.connection.commit()
