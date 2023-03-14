@@ -47,6 +47,7 @@ classes=['Apple scab', 'Apple Black rot', 'Cedar apple rust',
          'Tomato mosaic virus', 'Tomato healthy']
 
 
+
 model = load_model("LensFleur-Flora.AI\model_finetuned.h5")
 
 @app.route('/', methods = ['GET'])
@@ -151,9 +152,21 @@ def predict():
         
     else:
         geolocation = "No GPS Data"
-    file = open("LensFleur-Flora.AI\static\\" + prediction.title() + ".txt", "r") 
+    file = open("LensFleur-Flora.AI/static/" + prediction.title() + ".txt", "r") 
     description = file.read()
-    return render_template('Result.html', prediction=prediction, geolocation=geolocation, description=description)
+    basics = description.split("Symptoms:")
+    basic = basics[0]
+    symp = basics[1].split("Cycle and Lethality:")
+    symptoms = "Symptoms: "+symp[0]
+    cyc = symp[1].split("Organic Solutions:")
+    cycle = "Cycle and Lethality: "+cyc[0]
+    organic = cyc[1].split("Inorganic Solutions:")
+    organics = "Organic Solutions: "+ organic[0]
+    inorganic = organic[1].split("Src:")
+    inorganics = "Inorganic Solutions: "+inorganic[0]
+    src = "Find out more at: "+inorganic[1]
+    return render_template('Result.html', prediction=prediction, geolocation=geolocation, description=description, basic = basic, 
+                           symptoms = symptoms, cycle = cycle, organics = organics, inorganics = inorganics, src = src)
 if __name__ == '__main__':
     app.run(port = 3000, debug=True)
     
