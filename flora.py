@@ -153,19 +153,34 @@ def predict():
     else:
         geolocation = "No GPS Data"
     file = open("LensFleur-Flora.AI/static/" + prediction.title() + ".txt", "r") 
-    description = file.read()
-    basics = description.split("Symptoms:")
-    basic = basics[0]
-    symp = basics[1].split("Cycle and Lethality:")
-    symptoms = "Symptoms: "+symp[0]
-    cyc = symp[1].split("Organic Solutions:")
-    cycle = "Cycle and Lethality: "+cyc[0]
-    organic = cyc[1].split("Inorganic Solutions:")
-    organics = "Organic Solutions: "+ organic[0]
-    inorganic = organic[1].split("Src:")
-    inorganics = "Inorganic Solutions: "+inorganic[0]
-    src = "Find out more at: "+inorganic[1]
-    return render_template('Result.html', prediction=prediction, geolocation=geolocation, description=description, basic = basic, 
+    print(prediction)
+    if "Healthy" in prediction or "healthy" in prediction:
+        basic = file.read()
+        return render_template('Result.html', prediction=prediction, geolocation=geolocation, basic=basic)
+    else:
+        description = file.read()
+        basics = description.split("Symptoms:")
+        basic = basics[0]
+        symp = basics[1].split("Cycle and Lethality:")
+        symptoms = "Symptoms: "+symp[0]
+        cyc = symp[1].split("Organic Solutions:")
+        cycle = "Cycle and Lethality: "+cyc[0]
+        organic = cyc[1].split("Inorganic Solutions:")
+        organics = "Organic Solutions: "+ organic[0]
+        print(organic)
+        inorganic = organic[1].split("Src:")
+        inorganics = "Inorganic Solutions: "+inorganic[0]
+        src = "Find out more at: "+inorganic[1]
+
+
+        cur = mysql.connection.cursor()
+        check = "select num_detection from detection_data where geo_location = %s and plant_disease = %s"
+        num_detect = cur.execute(check, (geolocation, prediction))+1
+        cur.execute("INSERT INTO detection_data (username, plant_disease, geo_location, num_detection) VALUES (%s, %s, %s, %s)", (session['username'], prediction, geolocation, num_detect))
+        mysql.connection.commit()
+        cur.close()
+
+        return render_template('Result.html', prediction=prediction, geolocation=geolocation, description=description, basic = basic, 
                            symptoms = symptoms, cycle = cycle, organics = organics, inorganics = inorganics, src = src)
 if __name__ == '__main__':
     app.run(port = 3000, debug=True)
