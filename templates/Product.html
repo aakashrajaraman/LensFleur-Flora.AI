@@ -11,8 +11,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="icon" type="image/x-icon" href="static/favicon.ico">
     <link rel="manifest" href="static/site.webmanifest">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 </head>
 <body id ="google_element">
     <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
@@ -21,22 +21,59 @@
         {
             new google.translate.TranslateElement("google_element");
         }
-    </script>
+    
+        let msg = new SpeechSynthesisUtterance();
+    let voices = speechSynthesis.getVoices();
+    msg.voice = voices[0];
+    let tags = document.querySelectorAll('p,a,h1,h2,h3'); // add more tags for you project
+    const myButton = document.getElementById("myButton");
+
+    
+    function speak(){
+            
+
+        
+        tags.forEach((tag) => {
+            tag.addEventListener('click', (e) => {
+                
+                msg.text = e.target.innerText;
+                msg.rate = 1.3
+                tag.style.backgroundColor = "none";
+                speechSynthesis.speak(msg);
+                
+                let interval = setInterval(() => {
+                    if(!speechSynthesis.speaking){
+                        tag.style.removeProperty('background-color');
+                        clearInterval(interval);
+                    }
+                }, 100);
+                
+            });
+        });
+        alert("Screen Reader Activated");
+    };
+</script>
 <header>
     <input type="checkbox" name="" id="toggler">
     <label for="toggler" class="fas fa-bars"></label>
     <a href="{{url_for('home')}}" class="logo">LENS<span>FLEUR</span></a>
-    <nav class="navbar" style = "font-family: Lato;">
-        <a href="{{url_for('home')}}" style = "font-family: Lato;">HOME</a>
-        <a href="#of"style = "font-family: Lato;">ORGANIC PRODUCTS</a>
-        <a href="#inof"style = "font-family: Lato;">INORGANIC FERTILIZERS</a>
-        <a href="#ini"style = "font-family: Lato;">INORGANIC INSECTICIDES</a>
-        <a href="#inop"style = "font-family: Lato;">INORGANIC PESTICIDES</a>
+    <nav class="navbar">
+        <a href="{{url_for('home')}}" style = "font-family:'Lato'">HOME</a>
+        <a href="#of" style = "font-family:'Lato'">ORGANIC PRODUCTS</a>
+        <a href="#inof" style = "font-family:'Lato'">INORGANIC FERTILIZERS</a>
+        <a href="#ini" style = "font-family:'Lato'">INORGANIC INSECTICIDES</a>
+        <a href="#inop" style = "font-family:'Lato'">INORGANIC PESTICIDES</a>
     </nav>
+    <a class="buttonvoice" id = "myButton" onclick="speak()">
+        <span class="fa fa-microphone" style="font-size: 25px; padding: 11px;"> </span>
+        <span class="textvoice">SCREEN READER</span>
+      </a>
 </header>
+ 
 <h1 class="heading"></h1>
+
 <section class="products" id="of">
-<h1 class="heading" style = "font-family: Bebas Neue;" > Organic <span style = "font-family: Bebas Neue;">Products</span> </h1>
+<h1 class="heading" style = "font-family:'Bebas Neue'"> Organic <span style = "font-family:'Bebas Neue'">Products</span> </h1>
 <div class="container">
     <div class="card-1 card-div">
         <div class="like-icon-div">
@@ -97,7 +134,7 @@
 </section>
 
 <section class="products" id="inof">
-<h1 class="heading" style = "font-family: Bebas Neue;"> Inorganic <span style = "font-family: Bebas Neue;">Fertilizers</span> </h1>
+<h1 class="heading" style = "font-family:'Bebas Neue'"> Inorganic <span style = "font-family:'Bebas Neue'">Fertilizers</span> </h1>
 <div class="container">
     <div class="card-1 card-div">
         <div class="like-icon-div">
@@ -159,7 +196,7 @@
 </section>
 
 <section class="products" id="ini">
-<h1 class="heading" style = "font-family: Bebas Neue;"> Inorganic <span style = "font-family: Bebas Neue;">Insecticides</span> </h1>
+<h1 class="heading" style = "font-family:'Bebas Neue'"> Inorganic <span style = "font-family:'Bebas Neue'">Insecticides</span> </h1>
 <div class="container">
     <div class="card-1 card-div">
         <div class="like-icon-div">
@@ -220,7 +257,7 @@
 </section>
 
 <section class="products" id="inop">
-<h1 class="heading" style = "font-family: Bebas Neue;"> Inorganic <span style = "font-family: Bebas Neue;">Pesticides</span> </h1>
+<h1 class="heading" style = "font-family:'Bebas Neue'"> Inorganic <span style = "font-family:'Bebas Neue'">Pesticides</span> </h1>
 <div class="container">
     <div class="card-1 card-div">
         <div class="like-icon-div">

@@ -321,43 +321,54 @@
   </header>
   <section class="products" id="R">
     <h2 class="heading" style = "margin-top: 8%;"><span style="color:#54b711;  font-family: Lato;">DETECTION RESULTS</span></h2>
-
+    {% if prediction %}
     <div class="box">
-      {% if prediction %}
+      
       <h1 class="two" style = "font-size: 70px; font-family: Bebas Neue; font-weight: None;">{{prediction.title()}}</h1>
       {% endif %}
     </div>
+    {% if basic %}
     <div class="box1">
-      {% if basic %}
+      
       <h2 class="two"style = " font-family: Lato; font-weight: None;" >{{basic}}</h2>
       {% endif %}</div>
+      {% if symptoms %}
       <div class="box1">
-        {% if symptoms %}
+        
         <h2 class="two"style = " font-family: Lato; font-weight: None;" >{{symptoms}}</h2>
         {% endif %}</div>
+        {% if cycle %}
         <div class="box1">
-          {% if cycle %}
+         
           <h2 class="two"style = " font-family: Lato; font-weight: None;" >{{cycle}}</h2>
           {% endif %}</div>
+          {% if organics %}
           <div class="box1">
-            {% if organics %}
             <h2 class="two"style = " font-family: Lato; font-weight: None;" >{{organics}}</h2>
             {% endif %}</div>
+            {% if inorganics %}
             <div class="box1">
-              {% if inorganics %}
+              
               <h2 class="two"style = " font-family: Lato; font-weight: None;" >{{inorganics}}</h2>
               {% endif %}</div>
-              <div class="box1">
               {% if src %}
+              <div class="box1">
+              
               <h2 class="two"style = " font-family: Lato; font-weight: None;" >{{src}}</h2>
               {% endif %}</div>
+              {% if geolocation %}
     <div class="box1">
-      {% if geolocation %}
+      
       <h3 class="two">{{geolocation}}</h3>
+      {% endif %}
+    </div>
+    {% if assert1 %}
+    <div class="box1">
+      
+      <h3 class="two">{{assert1}}</h3>
       {% endif %}
     </div>
   </section>
 </body>
 
 </html>
-

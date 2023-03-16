@@ -666,7 +666,7 @@ header .arrow-down {
 .reservation {
     background-color: #ffffff;
     border-color: #032406;
-    border: solid 5px;
+    border: dashed 5px;
     border-radius: 30px;
     padding: 2%;
     margin: 2%;
@@ -1098,7 +1098,6 @@ body
   width: 80%;
   justify-content: center;
   margin: 0 auto;
-  font-family: "Lato";
 }
 
 .wrapper .navbar .main_ul > li{
@@ -1116,8 +1115,6 @@ body
   padding: 21px 0;
   position: relative;
   transition: all 0.3s linear;
-  font-family: "Lato";
-  
 }
 
 .wrapper .navbar .main_ul li:hover  a{
@@ -1175,12 +1172,12 @@ body
   color: rgb(3, 94, 40);
   text-decoration: none;
   border-radius: 60px;
-  height: 30px;
+  height: 40px;
   display: inline-flex;
   align-items: center;
   overflow:hidden;
   width: auto;
-  max-width: 50px; 
+  max-width: 40px; /** I'm animating max-width because width needs to be auto, and auto can't be animated **/
   -webkit-transition: max-width 0.9s;
   transition: max-width 0.9s;
 }
@@ -1208,11 +1205,9 @@ body
   <header>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Squada One">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <a class="buttonvoice" id = "myButton">
-        <span class="fa fa-microphone" style="font-size: 29px; padding: 15px;"> </span>
-        <span class="textvoice" style = "font-family: Lato;">SCREEN READER</span>
+        <span class="fa fa-microphone" style="font-size: 25px; padding: 11px;"> </span>
+        <span class="textvoice">SCREEN READER</span>
       </a>   
     <div class="wrapper">
         <div class="navbar">
@@ -1255,7 +1250,7 @@ body
       </nav>
          --> 
       <div class="text">
-          <h2 style = "color: #000000; font-size: 250px; margin-top:-5%">LensFleur</h2>
+          <h2 style = "color: #000000; font-size: 250px;">LensFleur</h2>
           <br>
           <br>
           <br>
@@ -1329,7 +1324,7 @@ body
       <div class="text">
           <h2 style = "color:#54b711; font-size: 120px;">Detect. Connect. Engage.</h2>
           <br/>
-          <h3 style = "padding-top: 2%;">Grow Like Never Before.</h3>
+          <h3>Grow Like Never Before.</h3>
       </div>
   </div>
   <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
@@ -1341,17 +1336,19 @@ body
 
         let msg = new SpeechSynthesisUtterance();
     let voices = speechSynthesis.getVoices();
-    msg.voice = voices[2];
-    let tags = document.querySelectorAll('p,a,h1,h2,h3'); 
+    msg.voice = voices[0];
+    let tags = document.querySelectorAll('p,a,h1,h2,h3'); // add more tags for you project
     const myButton = document.getElementById("myButton");
 
     myButton.addEventListener("click", () => {
+        
+
         
         tags.forEach((tag) => {
             tag.addEventListener('click', (e) => {
                 
                 msg.text = e.target.innerText;
-                msg.rate = 1.3;
+                msg.rate = 1.3
                 tag.style.backgroundColor = "none";
                 speechSynthesis.speak(msg);
                 
