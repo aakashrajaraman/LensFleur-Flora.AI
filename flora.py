@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect, url_for, session
-from flask_mysqldb import MySQL
 from keras.models import load_model
 import numpy as np
 from exif import Image as im
@@ -14,9 +13,9 @@ import re
 app = Flask(__name__)
 
 
-app.config['MYSQL_HOST'] = '35.200.223.139'
+app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'LensFleur'
+app.config['MYSQL_PASSWORD'] = 'Aakash5122!'
 app.config['MYSQL_DB'] = 'lensfleur'
 app.config['SECRET_KEY'] = 'lensfleur'
 mysql = MySQLdb.connect(
@@ -180,7 +179,7 @@ def predict():
 
         assert1 = ""
         if num_detect > 2 and "Healthy" not in prediction.title():
-            assert1 = "Data suggests there is a spike of "+prediction +" in "+str(geolocation.address)+". Please consult the appropriate authorities while we share our data to adequately combat the issue."
+            assert1 = "Data suggests there is a spike of "+prediction +" in "+str(geolocation)+". Please consult the appropriate authorities while we share our data to adequately combat the issue."
         
         return render_template('Result.html', prediction=prediction, geolocation=geolocation, basic=basic, symptoms=symptoms, cycle=cycle, organics=organics, inorganics=inorganics, src=src, 
                                assert1 = assert1)
