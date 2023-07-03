@@ -13,9 +13,9 @@ import re
 app = Flask(__name__)
 
 
-app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_HOST'] = '35.200.223.139'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Aakash5122!'
+app.config['MYSQL_PASSWORD'] = 'LensFleur'
 app.config['MYSQL_DB'] = 'lensfleur'
 app.config['SECRET_KEY'] = 'lensfleur'
 mysql = MySQLdb.connect(
